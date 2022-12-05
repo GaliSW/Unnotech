@@ -1,8 +1,15 @@
 <template>
     <section id="book_list">
-        <div class="card" v-for="(item, index) in booklist" @click="toBook(item.id, item.title)">
+        <div
+            class="card"
+            v-for="(item, index) in booklist"
+            @click="toBook(item.id, item.title)"
+        >
             <div class="banner">
-                <img :src="item.image ? item.image : 'https://img.onl/f7yYXv'" alt="">
+                <img
+                    :src="item.image ? item.image : 'https://img.onl/f7yYXv'"
+                    alt=""
+                />
             </div>
             <div class="card_info">
                 <h3>{{ item.title }}</h3>
@@ -12,28 +19,27 @@
     </section>
 </template>
 <script setup>
-import { onMounted, ref } from 'vue';
-import { getBookListApi } from '@/api/api';
-import { useRouter } from 'vue-router'
-import { bookStore } from "@/store/book"
+import { onMounted, ref } from "vue";
+import { getBookListApi } from "@/api/api";
+import { useRouter } from "vue-router";
+import { bookStore } from "@/store/book";
 
-const book = bookStore()
-const router = useRouter()
-const booklist = ref("")
-const emit = defineEmits(["updateName"])
+const book = bookStore();
+const router = useRouter();
+const booklist = ref("");
 
 onMounted(() => {
-    book.title = "書籤列表"
+    book.title = "書籤列表";
     getBookListApi().then((res) => {
-        console.log(res)
-        booklist.value = res.data
-    })
-})
+        console.log(res);
+        booklist.value = res.data;
+    });
+});
 
 const toBook = (id, name) => {
-    book.title = name
+    book.title = name;
     router.push({
-        path: `/books/${id}`
-    })
-}
+        path: `/books/${id}`,
+    });
+};
 </script>
