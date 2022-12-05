@@ -1,27 +1,33 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
 }
-body{
+body {
     margin: 0;
 }
-html{
+html {
     font-size: 4vw;
-    background-color: rgb(244, 244, 244);
-    h1{
-        font-size: 1.6rem;
+    background-color: #f4f4f4;
+    h1 {
+        font-size: 1.2rem;
     }
-    h3{
+    h3 {
         font-size: 1.2rem;
         margin: 0;
+        white-space: nowrap;
     }
-    p{
-        font-size: 1rem
+    p {
+        font-size: 1rem;
     }
-    i{
+    i {
         font-size: 1.2rem;
         cursor: pointer;
-        color: rgb(105, 188, 239);
+        color: #69bcef;
     }
 }
 
+@media (min-width: 767px) {
+    html {
+        font-size: 2vw;
+    }
+}
