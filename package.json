@@ -8,10 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "axios": "^1.2.0",
+    "pinia": "^2.0.27",
+    "vue": "^3.2.25",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.4",
+    "sass": "^1.56.1",
     "vite": "^2.9.15"
   }
 }

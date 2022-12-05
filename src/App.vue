@@ -1,21 +1,25 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+    <header>
+        <router-link to="/books">
+            <i class="fa-solid fa-chevron-left" v-if="route.path !== '/books'"></i>
+        </router-link>
+        <h1>{{ book.title }}</h1>
+        <i class="fa-solid fa-plus" v-if="route.path == '/books'"></i>
+        <i class="fa-sharp fa-solid fa-file-pen" v-else></i>
+    </header>
+    <router-view></router-view>
+    <AddPop></AddPop>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<script setup>
+import AddPop from "@/components/AddBook.vue"
+import EditPop from "@/components/EditBook.vue"
+import { bookStore } from "@/store/book"
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const book = bookStore()
+
+</script>
+<style lang="scss">
+@import "@/assets/scss/style";
 </style>
