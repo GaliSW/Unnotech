@@ -1,0 +1,30 @@
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    height: 3rem;
+
+    h1 {
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 60%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+
+    .fa-chevron-left {
+        color: #ccc;
+    }
+}

@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    margin: 0;
+}
+html{
+    font-size: 4vw;
+    background-color: rgb(244, 244, 244);
+    h1{
+        font-size: 1.6rem;
+    }
+    h3{
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    p{
+        font-size: 1rem
+    }
+    i{
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: rgb(105, 188, 239);
+    }
+}
+
