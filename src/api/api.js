@@ -13,11 +13,11 @@ export const getBookListApi = () => {
 export const getBookApi = (id) => {
     return instance.get(`/${id}`);
 };
-export const patchBookApi = (id) => {
-    return instance.patch(`/${id}`);
+export const patchBookApi = (id, data) => {
+    return instance.patch(`/${id}`, data);
 };
 export const addBookApi = (data) => {
-    return instance.post(data);
+    return instance.post("", data);
 };
 export const deleteBookApi = (id) => {
     return instance.delete(`/${id}`);
