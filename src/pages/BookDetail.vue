@@ -1,19 +1,19 @@
 <template>
     <section id="book_detail">
         <div class="thumbnail">
-            <img :src="bookInfo.image ? bookInfo.image : 'https://img.onl/f7yYXv'" alt="">
+            <img :src="book.bookInfo.image ? book.bookInfo.image : 'https://img.onl/f7yYXv'" alt="">
         </div>
         <div>
             <h3>名稱</h3>
-            <p>{{ bookInfo.title }}</p>
+            <p>{{ book.bookInfo.title }}</p>
         </div>
         <div>
             <h3>作者</h3>
-            <p>{{ (bookInfo.author) }}</p>
+            <p>{{ book.bookInfo.author }}</p>
         </div>
         <div class="description">
             <h3>備註</h3>
-            <p>{{ bookInfo.description }}
+            <p>{{ book.bookInfo.description }}
             </p>
         </div>
     </section>
@@ -22,13 +22,17 @@
 import { onMounted, ref } from 'vue';
 import { getBookApi } from '@/api/api';
 import { useRoute } from 'vue-router'
+import { bookStore } from "@/store/book";
 
-const route = useRoute()
-const bookInfo = ref("")
+const book = bookStore();
+const route = useRoute();
 onMounted(() => {
     getBookApi(route.params.id).then((res) => {
-        bookInfo.value = res.data
-        console.log(res)
+        book.bookInfo.title = res.data.title;
+        book.bookInfo.bookId = res.data.id;
+        book.bookInfo.author = res.data.author;
+        book.bookInfo.description = res.data.description;
+        book.bookInfo.image = res.data.image;
     })
 })
 </script>

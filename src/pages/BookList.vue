@@ -1,15 +1,8 @@
 <template>
     <section id="book_list">
-        <div
-            class="card"
-            v-for="(item, index) in booklist"
-            @click="toBook(item.id, item.title)"
-        >
+        <div class="card" v-for="(item, index) in booklist" @click="toBook(item.id)">
             <div class="banner">
-                <img
-                    :src="item.image ? item.image : 'https://img.onl/f7yYXv'"
-                    alt=""
-                />
+                <img :src="item.image ? item.image : 'https://img.onl/f7yYXv'" alt="" />
             </div>
             <div class="card_info">
                 <h3>{{ item.title }}</h3>
@@ -29,15 +22,13 @@ const router = useRouter();
 const booklist = ref("");
 
 onMounted(() => {
-    book.title = "書籤列表";
+    book.bookInfo.title = "書籤列表";
     getBookListApi().then((res) => {
-        console.log(res);
         booklist.value = res.data;
     });
 });
 
-const toBook = (id, name) => {
-    book.title = name;
+const toBook = (id) => {
     router.push({
         path: `/books/${id}`,
     });

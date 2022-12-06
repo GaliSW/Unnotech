@@ -1,8 +1,13 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 
 export const bookStore = defineStore("store", () => {
-    const title = ref("書籤列表");
-    const bookId = ref(0);
-    return { title, bookId };
+    const bookInfo = reactive({
+        title: "書籤列表",
+        bookId: 0,
+        author: "",
+        description: "",
+        image: "",
+    });
+    return { bookInfo };
 });
