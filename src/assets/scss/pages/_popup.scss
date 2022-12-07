@@ -8,37 +8,39 @@
     background-color: rgba($color: #000000, $alpha: 0.7);
     .wrapper {
         position: absolute;
-        overflow: auto;
+        overflow: scroll;
         padding: 1rem 0;
         background-color: #f4f4f4;
         width: 90%;
-        height: 80%;
+        height: 90%;
         max-width: 1200px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
         @include center();
         @include radius(0.5);
-        .pop_head {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 1rem;
-            .fa-trash-can {
-                @include transition(0.3s);
-                color: rgb(246, 123, 123);
-                &:hover {
-                    color: red;
-                }
-            }
-            h1 {
-                position: absolute;
-                @include center();
-            }
+        @include breakpoint(xs) {
+            justify-content: space-around;
         }
+    }
+}
+#popup .wrapper .pop_head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    .fa-trash-can {
+        @include transition(0.3s);
+        color: rgb(246, 123, 123);
+        &:hover {
+            color: red;
+        }
+    }
+    h1 {
+        position: absolute;
+        @include center();
     }
 }
 #popup .wrapper .add_blk {
@@ -51,6 +53,7 @@
     gap: 1rem;
     padding: 1rem;
     > div {
+        height: 100px;
         position: relative;
         background-color: #fff;
         width: 100%;
@@ -78,10 +81,8 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        height: 10rem;
+        height: 200px;
         > div {
-            width: 50%;
-            aspect-ratio: 1;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -111,8 +112,8 @@
         }
     }
     .description {
+        height: 200px;
         position: relative;
-        height: 12rem;
         h3 {
             position: absolute;
             left: 1rem;
@@ -121,7 +122,6 @@
         textarea {
             font-size: 1rem;
             width: 100%;
-            height: calc(100% - 2rem);
             border: none;
             margin-top: 2rem;
             resize: none;
@@ -130,7 +130,6 @@
     }
 }
 #popup .wrapper .action {
-    height: 10%;
     display: flex;
     width: 100%;
     gap: 1rem;
