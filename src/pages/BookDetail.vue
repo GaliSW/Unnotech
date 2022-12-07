@@ -2,13 +2,10 @@
     <section id="book_detail">
         <div class="thumbnail">
             <img
+                v-show="isLoad"
                 class="lazy"
-                :src="
-                    book.bookInfo.image
-                        ? book.bookInfo.image
-                        : 'https://img.onl/N7lQ9o'
-                "
-                alt=""
+                :src="book.bookInfo.image"
+                alt="book_thumbnail"
             />
             <div class="lds-roller" v-if="!isLoad">
                 <div></div>
@@ -46,7 +43,7 @@ const route = useRoute();
 const router = useRouter();
 const isLoad = ref(false);
 
-router.beforeEach(async (to, from) => {
+router.beforeEach((to, from) => {
     book.bookInfo.image = "";
 });
 
@@ -56,7 +53,12 @@ onMounted(() => {
         book.bookInfo.bookId = res.data.id;
         book.bookInfo.author = res.data.author;
         book.bookInfo.description = res.data.description;
-        book.bookInfo.image = res.data.image;
+        if (res.data.image) {
+            book.bookInfo.image = res.data.image;
+        } else {
+            book.bookInfo.image = "https://img.onl/N7lQ9o";
+        }
+        return;
     });
     const classImg = document.querySelector(".lazy");
     classImg.addEventListener("load", () => {
