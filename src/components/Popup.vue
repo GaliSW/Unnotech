@@ -15,7 +15,11 @@
                 <div class="upload">
                     <div>
                         <img
-                            :src="book.bookInfo.image"
+                            :src="
+                                book.bookInfo.image
+                                    ? book.bookInfo.image
+                                    : 'https://img.onl/N7lQ9o'
+                            "
                             alt=""
                             id="imgSrc"
                             v-if="isFilesReady"
@@ -88,6 +92,7 @@ onMounted(() => {
         author.value = book.bookInfo.author;
         title.value = book.bookInfo.title;
         description.value = book.bookInfo.description;
+
         status.value = "修改封面";
         isFilesReady.value = true;
     }

@@ -7,7 +7,7 @@
         >
             <div class="banner">
                 <img
-                    :src="item.image ? item.image : 'https://img.onl/f7yYXv'"
+                    :src="item.image ? item.image : 'https://img.onl/N7lQ9o'"
                     alt=""
                 />
             </div>
