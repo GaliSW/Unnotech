@@ -9,5 +9,6 @@ export const bookStore = defineStore("store", () => {
         description: "",
         image: "",
     });
-    return { bookInfo };
+    const bookList = ref("");
+    return { bookInfo, bookList };
 });
