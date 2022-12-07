@@ -5,6 +5,7 @@
                 <i class="fa-solid fa-chevron-left" @click="fnCancel"></i>
                 <h1 v-if="props.pop === 1">新增書籍</h1>
                 <h1 v-else>修改書籍</h1>
+                <i class="fa-solid fa-trash-can" @click="fnDelete"></i>
             </div>
             <div class="add_blk">
                 <div class="upload">
@@ -58,16 +59,17 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { bookStore } from "@/store/book";
-import { useRoute } from "vue-router";
+import { useRouter } from "vue-router";
 import {
     addBookApi,
     patchBookApi,
     getBookApi,
     getBookListApi,
+    deleteBookApi,
 } from "@/api/api";
 
 const book = bookStore();
-const route = useRoute();
+const router = useRouter();
 
 const status = ref("上傳封面");
 const isFilesReady = ref(false);
@@ -128,6 +130,19 @@ const fnAddandPatch = (type) => {
         }
     } else {
         alert("請輸入書本必要資訊");
+    }
+};
+
+const fnDelete = () => {
+    const check = confirm("是否此刪除書籍");
+    if (check) {
+        deleteBookApi(book.bookInfo.bookId).then(() => {
+            alert(`成功刪除"${book.bookInfo.title}"`);
+            fnCancel();
+            router.push({
+                path: "/books",
+            });
+        });
     }
 };
 
