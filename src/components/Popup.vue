@@ -26,11 +26,11 @@
                     />
                 </div>
                 <div>
-                    <h3>名稱</h3>
+                    <h3 class="require">名稱</h3>
                     <input type="text" placeholder="請輸入書名" id="title" />
                 </div>
                 <div>
-                    <h3>作者</h3>
+                    <h3 class="require">作者</h3>
                     <input type="text" placeholder="請輸入作者" id="author" />
                 </div>
                 <div class="description">
@@ -100,12 +100,12 @@ const fnAddandPatch = (type) => {
     const author = document.getElementById("author");
     const title = document.getElementById("title");
     const description = document.getElementById("description");
-    if (author.value !== "" && title.value !== "" && description.value !== "") {
+    if (author.value !== "" && title.value !== "") {
         const json = JSON.stringify({
             image: img.src,
-            title: title.value,
-            author: author.value,
-            description: description.value,
+            title: title.value.trim(),
+            author: author.value.trim(),
+            description: description.value.trim(),
         });
         if (type === 1) {
             addBookApi(json).then(() => {
