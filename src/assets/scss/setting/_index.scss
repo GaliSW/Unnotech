@@ -1,0 +1,46 @@
+/** Color **/
+$background-grey: #f4f4f4;
+$background-white: #fff;
+$blue: #69bcef;
+
+/** FONT **/
+$font-family: "Libre Franklin", "Noto Sans TC", sans-serif;
+$font-bold: 700;
+$font-size-default: 1rem;
+
+/** BREAKPOINT **/
+$breakpoints: (
+    xs: 320px,
+    md: 768px,
+    xl: 1200px,
+);
+@mixin breakpoint($breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+/** TRANSITION **/
+@mixin transition($x) {
+    transition: all $x ease-in-out;
+}
+
+/** TRANSLATE **/
+@mixin center() {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+/** BORDER-RADIUS **/
+@mixin radius($x) {
+    border-radius: 1rem * $x;
+    -webkit-border-radius: 1rem * $x;
+    -moz-border-radius: 1rem * $x;
+    -ms-border-radius: 1rem * $x;
+    -o-border-radius: 1rem * $x;
+}

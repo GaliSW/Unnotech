@@ -1,12 +1,19 @@
 <template>
     <section id="book_list">
-        <div class="card" v-for="(item, index) in booklist" @click="toBook(item.id)">
+        <div
+            class="card"
+            v-for="(item, index) in booklist"
+            @click="toBook(item.id)"
+        >
             <div class="banner">
-                <img :src="item.image ? item.image : 'https://img.onl/f7yYXv'" alt="" />
+                <img
+                    :src="item.image ? item.image : 'https://img.onl/f7yYXv'"
+                    alt=""
+                />
             </div>
             <div class="card_info">
                 <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+                <p>{{ item.author }}</p>
             </div>
         </div>
     </section>

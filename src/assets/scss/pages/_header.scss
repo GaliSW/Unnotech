@@ -1,0 +1,31 @@
+header {
+    background-color: $background-white;
+    div {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        margin: 0 auto;
+        height: 5rem;
+        max-width: 1200px;
+        @include breakpoint(md) {
+            height: 6rem;
+        }
+    }
+
+    h1 {
+        margin: 0;
+        position: absolute;
+        width: 60%;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        @include center();
+    }
+
+    .fa-chevron-left {
+        color: #ccc;
+    }
+}

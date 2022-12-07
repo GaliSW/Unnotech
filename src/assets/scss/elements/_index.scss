@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: $font-family;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    background-color: $background-grey;
+}
+
+h1 {
+    font-size: $font-size-default * 1.8;
+    font-weight: 700;
+    @include breakpoint(md) {
+        font-size: $font-size-default * 2.2;
+    }
+    @include breakpoint(xl) {
+        font-size: $font-size-default * 2.5;
+    }
+}
+
+h3 {
+    font-size: $font-size-default * 1;
+    white-space: nowrap;
+    @include breakpoint(md) {
+        font-size: $font-size-default * 1.4;
+    }
+    @include breakpoint(xl) {
+        font-size: $font-size-default * 1.6;
+    }
+}
+
+p {
+    font-size: $font-size-default * 0.9;
+    font-weight: 400;
+    @include breakpoint(md) {
+        font-size: $font-size-default * 1.2;
+    }
+}
+
+i {
+    font-size: $font-size-default * 1.8;
+    cursor: pointer;
+    color: $blue;
+    @include breakpoint(md) {
+        font-size: $font-size-default * 2.2;
+    }
+    @include breakpoint(xl) {
+        font-size: $font-size-default * 2.5;
+    }
+}

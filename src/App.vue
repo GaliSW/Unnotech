@@ -1,11 +1,24 @@
 <template>
     <header>
-        <router-link to="/books">
-            <i class="fa-solid fa-chevron-left" v-if="route.path !== '/books'"></i>
-        </router-link>
-        <h1>{{ book.bookInfo.title }}</h1>
-        <i class="fa-solid fa-plus" @click="popup(1)" v-if="route.path == '/books'"></i>
-        <i class="fa-sharp fa-solid fa-file-pen" @click="popup(2)" v-else></i>
+        <div>
+            <router-link to="/books">
+                <i
+                    class="fa-solid fa-chevron-left"
+                    v-if="route.path !== '/books'"
+                ></i>
+            </router-link>
+            <h1>{{ book.bookInfo.title }}</h1>
+            <i
+                class="fa-solid fa-plus"
+                @click="popup(1)"
+                v-if="route.path == '/books'"
+            ></i>
+            <i
+                class="fa-sharp fa-solid fa-file-pen"
+                @click="popup(2)"
+                v-else
+            ></i>
+        </div>
     </header>
     <router-view></router-view>
     <Pop v-if="pop === 1 || pop === 2" :pop="pop" @close-pop="closePop"></Pop>
