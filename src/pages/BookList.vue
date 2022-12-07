@@ -2,11 +2,13 @@
     <section id="book_list">
         <div
             class="card"
-            v-for="(item, index) in booklist"
+            v-for="(item, index) in bookList"
             @click="toBook(item.id)"
         >
+            <div class="loader" v-if="!isLoad"></div>
             <div class="banner">
                 <img
+                    class="lazy"
                     :src="item.image ? item.image : 'https://img.onl/N7lQ9o'"
                     alt=""
                 />
@@ -26,12 +28,25 @@ import { bookStore } from "@/store/book";
 
 const book = bookStore();
 const router = useRouter();
-const booklist = ref("");
+const bookList = ref("");
+const isLoad = ref(false);
 
-onMounted(() => {
+onMounted(async () => {
     book.bookInfo.title = "書籤列表";
-    getBookListApi().then((res) => {
-        booklist.value = res.data;
+    await getBookListApi().then((res) => {
+        bookList.value = res.data;
+    });
+
+    const classImg = document.querySelectorAll(".lazy");
+    const length = classImg.length;
+    let count = 0;
+    classImg.forEach((item) => {
+        count++;
+        if (count === length) {
+            item.addEventListener("load", () => {
+                isLoad.value = true;
+            });
+        }
     });
 });
 

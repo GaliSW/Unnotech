@@ -82,4 +82,28 @@
             }
         }
     }
+    @keyframes loading {
+        to {
+            background-position-x: -20%;
+        }
+    }
+    .loader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-color: #fff;
+        z-index: 1;
+        background: linear-gradient(
+                100deg,
+                rgba(256, 256, 256, 0) 30%,
+                rgba(256, 256, 256, 0.5) 50%,
+                rgba(256, 256, 256, 0) 30%
+            )
+            #dadada;
+        background-size: 200% 100%;
+        background-position-x: 180%;
+        animation: 0.8s loading ease-in-out infinite;
+        -webkit-animation: 0.8s loading ease-in-out infinite;
+    }
 }
