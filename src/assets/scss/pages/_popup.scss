@@ -69,13 +69,14 @@
             outline: none;
             border: none;
             padding: 0.5rem;
+            border: 1px solid #ccc;
         }
         .require::before {
             content: "*";
             color: red;
             position: absolute;
             left: 0.3rem;
-            top: 0.5rem;
+            top: 30%;
         }
     }
     .upload {
@@ -129,6 +130,7 @@
             border: none;
             resize: none;
             outline: none;
+            border: 1px solid #ccc;
         }
     }
 }
