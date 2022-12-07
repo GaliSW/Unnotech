@@ -1,6 +1,6 @@
 # 執行
 
-請用下方連結進入專案
+請用連結進入專案
 連結 ：https://galisw.github.io/Unnotech/#/books
 
 # 架構邏輯說明
