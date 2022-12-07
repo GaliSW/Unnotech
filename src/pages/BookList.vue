@@ -38,18 +38,22 @@ onMounted(async () => {
             resolve();
         });
     });
-    await getBooks;
-    const classImg = document.querySelectorAll(".lazy");
-    const length = classImg.length;
-    let count = 0;
-    classImg.forEach((item) => {
-        count++;
-        if (count === length) {
-            item.addEventListener("load", () => {
-                isLoad.value = true;
-            });
-        }
-    });
+    if (book.bookList.length === 0) {
+        await getBooks;
+        const classImg = document.querySelectorAll(".lazy");
+        const length = classImg.length;
+        let count = 0;
+        classImg.forEach((item) => {
+            count++;
+            if (count === length) {
+                item.addEventListener("load", () => {
+                    isLoad.value = true;
+                });
+            }
+        });
+    } else {
+        isLoad.value = true;
+    }
 });
 
 const toBook = (id) => {

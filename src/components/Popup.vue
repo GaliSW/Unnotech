@@ -121,6 +121,7 @@ const fnAddandPatch = (type) => {
         if (type === 1) {
             addBookApi(json).then(() => {
                 alert("新增成功");
+                book.bookList = [];
                 location.reload();
             });
         } else {
