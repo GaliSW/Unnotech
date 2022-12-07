@@ -92,12 +92,13 @@
         width: 100%;
         height: 100%;
         top: 0;
+        left: 0;
         background-color: #fff;
         z-index: 1;
         background: linear-gradient(
-                100deg,
+                120deg,
                 rgba(256, 256, 256, 0) 30%,
-                rgba(256, 256, 256, 0.5) 50%,
+                rgba(256, 256, 256, 0.5) 60%,
                 rgba(256, 256, 256, 0) 30%
             )
             #dadada;
