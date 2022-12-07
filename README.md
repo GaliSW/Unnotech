@@ -1,14 +1,17 @@
 # 執行
 
 請用連結進入專案
+
 連結 ：https://galisw.github.io/Unnotech/#/books
 
 # 架構邏輯說明
 
 ### 組件劃分
 
-本專案依據需求製作兩個主元件，分別為 **BookList & BookDetail**，
+本專案依據需求製作兩個主元件，分別為 **BookList & BookDetail**。
+
 **新增與修改頁面**因 POP 視窗的結構差異不大，因此共用一個 **POP 組件**，並依照傳參不同切換 POP 內的值。
+
 **Header**的部分也是因為共用性高，因此將 Heade 寫在 APP.vue 中，頁面不必重新渲染。
 
 # Library 說明
