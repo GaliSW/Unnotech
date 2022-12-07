@@ -5,7 +5,11 @@
                 <i class="fa-solid fa-chevron-left" @click="fnCancel"></i>
                 <h1 v-if="props.pop === 1">新增書籍</h1>
                 <h1 v-else>修改書籍</h1>
-                <i class="fa-solid fa-trash-can" @click="fnDelete"></i>
+                <i
+                    class="fa-solid fa-trash-can"
+                    @click="fnDelete"
+                    v-if="props.pop === 2"
+                ></i>
             </div>
             <div class="add_blk">
                 <div class="upload">

@@ -46,6 +46,9 @@ i {
     font-size: $font-size-default * 1.8;
     cursor: pointer;
     color: $blue;
+    &:hover {
+        transform: scale(1.1);
+    }
     @include breakpoint(md) {
         font-size: $font-size-default * 2.2;
     }
