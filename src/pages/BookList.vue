@@ -9,7 +9,11 @@
             <div class="banner">
                 <img
                     :class="item.image ? '' : 'lazy'"
-                    :src="item.image ? item.image : 'https://img.onl/N7lQ9o'"
+                    :src="
+                        item.image
+                            ? item.image
+                            : 'https://cdn.kingstone.com.tw/book/images/product/20186/2018630448367/2018630448367m.jpg'
+                    "
                     alt=""
                 />
             </div>
@@ -47,7 +51,9 @@ onMounted(async () => {
             count++;
             if (count === length) {
                 item.addEventListener("load", () => {
-                    isLoad.value = true;
+                    setTimeout(() => {
+                        isLoad.value = true;
+                    }, 500);
                 });
             }
         });

@@ -56,7 +56,8 @@ onMounted(() => {
         if (res.data.image) {
             book.bookInfo.image = res.data.image;
         } else {
-            book.bookInfo.image = "https://img.onl/N7lQ9o";
+            book.bookInfo.image =
+                "https://cdn.kingstone.com.tw/book/images/product/20186/2018630448367/2018630448367m.jpg";
         }
         return;
     });

@@ -18,7 +18,7 @@
                             :src="
                                 book.bookInfo.image
                                     ? book.bookInfo.image
-                                    : 'https://img.onl/N7lQ9o'
+                                    : 'https://cdn.kingstone.com.tw/book/images/product/20186/2018630448367/2018630448367m.jpg'
                             "
                             alt=""
                             id="imgSrc"
