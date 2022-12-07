@@ -1,4 +1,8 @@
 header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid #ccc;
     background-color: $background-white;
     div {
         position: relative;
