@@ -121,9 +121,7 @@ const fnAddandPatch = (type) => {
         if (type === 1) {
             addBookApi(json).then(() => {
                 alert("新增成功");
-                getBookListApi().then(() => {
-                    fnCancel();
-                });
+                location.reload();
             });
         } else {
             patchBookApi(book.bookInfo.bookId, json).then(() => {
